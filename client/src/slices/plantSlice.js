@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:7500";
+const API_URL = "https://plant-care-server.onrender.com";
 
 // Add Plant with Image
 export const addPlantThunk = createAsyncThunk("plant/addPlant", async (formData) => {
@@ -78,3 +78,4 @@ const plantSlice = createSlice({
 });
 
 export default plantSlice.reducer;
+
