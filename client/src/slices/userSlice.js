@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL = "https://plant-care-server.onrender.com";
 
-//  Register new user
+// ✅ Register new user
 export const registerThunk = createAsyncThunk(
   "user/register",
   async (userData, { rejectWithValue }) => {
@@ -19,7 +19,7 @@ export const registerThunk = createAsyncThunk(
   }
 );
 
-// Login user
+// ✅ Login user
 export const loginThunk = createAsyncThunk(
   "user/login",
   async (loginData, { rejectWithValue }) => {
@@ -60,10 +60,12 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-
-      
+      // ---------------------------
+      // REGISTER
+      // ---------------------------
       .addCase(registerThunk.pending, (state) => {
         state.loading = true;
+         state.msg = null; 
       })
       .addCase(registerThunk.fulfilled, (state, action) => {
         state.msg = action.payload.message;
@@ -81,10 +83,12 @@ const userSlice = createSlice({
       // ---------------------------
       .addCase(loginThunk.pending, (state) => {
         state.loading = true;
-      })
+        state.msg = null;   // clear old messages
+})
+
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.msg = action.payload.message;
-        state.success = action.payload.success;
+        state.success = true;
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.loading = false;
@@ -99,4 +103,3 @@ const userSlice = createSlice({
 
 export const { logout, reset } = userSlice.actions;
 export default userSlice.reducer;
-
