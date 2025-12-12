@@ -101,7 +101,8 @@ export default function Dashboard() {
                       Species: {plant.species}<br />
                       Water every {plant.wateringFrequency} days<br />
                       Last Watered: {new Date(plant.lastWateredDate).toLocaleDateString()}<br />
-                      Next Watering: {new Date(plant.nextWateringDate).toLocaleDateString()}
+                      Next Watering:{plant.nextWateringDate ? new Date(plant.nextWateringDate).toLocaleDateString(): "Not available"}
+\\
                     </CardText>
                     <div className="d-flex justify-content-center gap-2">
                       <Link to={`/update-plant/${plant._id}`}>
@@ -136,4 +137,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
 
