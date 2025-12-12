@@ -68,18 +68,19 @@ export default function Dashboard() {
                   <CardBody>
                     {/* Image Handling */}
                     {plant.imageUrl? (
-                      <img
-                        src={`http://localhost:7500${plant.imageUrl}`}
-                        alt={plant.plantName}
-                        style={{
-                          width: "100%",
-                          height: "200px",
-                          objectFit: "cover",
-                          borderTopLeftRadius: "12px",
+                    <img
+                     src={plant.imageUrl}
+                     alt={plant.plantName}
+                     style={{
+                      width: "100%",
+                        height: "200px",
+                        objectFit: "cover",
+                         borderTopLeftRadius: "12px",
                           borderTopRightRadius: "12px",
-                        }}
-                        onError={(e) => (e.target.src = "/default-plant.jpg")}
-                      />
+  }}
+  onError={(e) => (e.target.src = "/default-plant.jpg")}
+/>
+
                     ) : (
                       <img
                         src="/default-plant.jpg"
@@ -136,6 +137,7 @@ export default function Dashboard() {
     </div>
   );
 }
+
 
 
 
