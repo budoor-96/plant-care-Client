@@ -8,7 +8,7 @@ export default function About() {
       fluid
       style={{
         padding: "40px",
-        backgroundColor: "#dbead5", // Matches prototype
+        backgroundColor: "#dbead5", 
         fontFamily: "'Segoe UI', sans-serif",
         color: "#333",
       }}
@@ -63,3 +63,4 @@ export default function About() {
     </Container>
   );
 }
+
