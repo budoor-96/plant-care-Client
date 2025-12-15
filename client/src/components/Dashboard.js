@@ -6,11 +6,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // ✅ added for navigation
+  const navigate = useNavigate(); 
   const { plants, loading } = useSelector((state) => state.plant);
   const user = useSelector((state) => state.user.user);
 
-  // Fetch plants when user is available
+  
   useEffect(() => {
     if (user?._id) {
       dispatch(fetchPlantsThunk(user._id));
@@ -21,7 +21,7 @@ export default function Dashboard() {
     dispatch(deletePlantThunk(id));
   };
 
-  // ✅ Updated to navigate to NearbyNurseries page
+
   const goToNearbyNurseries = () => {
     navigate("/nearby-nurseries");
   };
@@ -29,14 +29,14 @@ export default function Dashboard() {
   return (
     <div style={{ backgroundColor: "#dbead5", minHeight: "100vh", fontFamily: "'Segoe UI', sans-serif" }}>
       <Container style={{ padding: "30px" }}>
-        {/* Page Title */}
+        
         <Row className="mb-4 text-center">
           <Col>
             <h2 style={{ color: "#2e4d2e", fontWeight: "bold" }}>My Garden</h2>
           </Col>
         </Row>
 
-        {/* Add New Plant Button */}
+       
         <Row className="mb-4 align-items-center">
           <Col className="text-end">
             <Link to="/add-plant">
@@ -47,7 +47,7 @@ export default function Dashboard() {
           </Col>
         </Row>
 
-        {/* Plant Section */}
+        
         {loading ? (
           <Row className="text-center">
             <Col><p>Loading plants...</p></Col>
@@ -66,7 +66,7 @@ export default function Dashboard() {
               <Col md="4" key={plant._id} className="mb-4">
                 <Card style={{ borderRadius: "12px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", backgroundColor: "#fff" }}>
                   <CardBody>
-                    {/* Image Handling */}
+                   
                     {plant.imageUrl? (
                     <img
                      src={plant.imageUrl}
@@ -122,11 +122,11 @@ export default function Dashboard() {
           </Row>
         )}
 
-        {/* Nearby Nurseries Button */}
+      
         <Row className="mt-5 text-center">
           <Col>
             <Button
-              onClick={goToNearbyNurseries} // ✅ navigate instead of fetching
+              onClick={goToNearbyNurseries} 
               style={{ backgroundColor: "#4a654a", color: "#fff", fontWeight: "bold", padding: "10px 20px" }}
             >
               Find Nearby Nurseries
@@ -137,6 +137,7 @@ export default function Dashboard() {
     </div>
   );
 }
+
 
 
 
