@@ -1,4 +1,3 @@
-
 import { Container, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import reminderIcon from "../images/water.png"; 
@@ -9,7 +8,7 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: "#dbead5", minHeight: "88vh", fontFamily: "'Segoe UI', sans-serif" }}>
       <Container className="text-center py-5">
-        
+      {/* Hero Section */}
         <h1 style={{ fontSize: "48px", fontWeight: "bold", color: "#2e4d2e" }}>
           Welcome to PlantCare
         </h1>
@@ -18,7 +17,7 @@ export default function Home() {
           Track watering schedules, get AI-powered advice, and watch your indoor garden thrive.
         </p>
 
-        
+         {/* Buttons */}
         <div style={{ marginTop: "30px" }}>
           <Link to="/register">
             <Button size="lg" style={{ backgroundColor: "#2e4d2e", color: "#fff", border: "none", marginRight: "15px" }}>
@@ -32,7 +31,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {
+          {/* Features Section */}
         <h2 style={{ marginTop: "60px", color: "#2e4d2e", fontWeight: "bold" }}>Features</h2>
         <Row className="mt-4">
           <Col md="4" className="text-center">
@@ -61,4 +60,5 @@ export default function Home() {
     </div>
   );
 }
+
 
