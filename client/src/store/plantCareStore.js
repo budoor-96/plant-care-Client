@@ -1,7 +1,7 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "../slices/userSlice";
-import plantReducer from "../slices/plantSlice"; // Updated slice for plants
+import plantReducer from "../slices/plantSlice"; 
 
 const plantCareStore = configureStore({
   reducer: {
@@ -12,5 +12,6 @@ const plantCareStore = configureStore({
 });
 
 export default plantCareStore;
+
 
 
