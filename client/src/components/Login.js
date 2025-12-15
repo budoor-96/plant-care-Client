@@ -71,7 +71,7 @@ export default function Login() {
               />
             </FormGroup>
 
-            
+              {/* Password */}
             <FormGroup>
               <Label>Password</Label>
               <input
@@ -89,7 +89,7 @@ export default function Login() {
               />
             </FormGroup>
 
-            
+             {/* Submit Button */}
             <FormGroup className="text-center mt-4">
               <button
                 className="btn"
@@ -108,7 +108,7 @@ export default function Login() {
               </button>
             </FormGroup>
 
-            
+             {/* Sign Up Link */}
             <FormGroup className="text-center mt-3">
               <Label>
                 Don't have an account?
@@ -127,7 +127,7 @@ export default function Login() {
           </form>
         </Row>
 
-        
+        {/* Error Message */}
         {msg && (
           <Row>
             <Container
@@ -142,4 +142,5 @@ export default function Login() {
     </Container>
   );
 }
+
 
