@@ -6,8 +6,8 @@ export default function Footer() {
     <Container
       fluid
       style={{
-        backgroundColor: "#c8d8c0", // Light green footer background
-        color: "#333", // Dark text
+        backgroundColor: "#c8d8c0", 
+        color: "#333", 
         padding: "15px",
         textAlign: "center",
         fontSize: "14px",
@@ -22,4 +22,5 @@ export default function Footer() {
       </p>
     </Container>
   )
+
 };
